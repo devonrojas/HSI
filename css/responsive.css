@@ -1,0 +1,118 @@
+@media screen and (max-width: 600px) {
+  .first-level {
+    width: 80vw;
+    left: -80vw;
+    overflow: scroll;
+    padding: 60px 10px;
+  }
+  .main-menu .bottom-contain {
+    bottom: 30px;
+  }
+  .main-menu .bottom-contain .menu:before {
+    width: 90%;
+    left: 5%;
+  }
+  .main-menu.show-first .main-menu__button {
+    left: 0;
+  }
+  .main-menu__button:after {
+    display: none;
+  }
+  .first-level .logo {
+    display: none;
+  }
+  .second-level__block {
+    z-index: 9999;
+  }
+
+  .mobile-logo-bar {
+    display: block;
+    position: fixed;
+    background-color: black;
+    background-image: url("../assets/mesaCollege_white.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
+    height: 60px;
+    width: 100%;
+    z-index: 99;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-w-sidebar {
+    width: 100%;
+  }
+  .sidebar {
+    width: 100%;
+    float: left;
+    transform: none;
+  }
+  .sidebar section {
+    display: none;
+  }
+  .sidebar--nav {
+    background-color: #111111;
+    padding-bottom: 20px;
+  }
+  .sidebar--nav > ul > li {
+    display: none;
+  }
+  .sidebar--nav .top-level {
+    display: none;
+  }
+
+  .sidebar--nav > ul > li.current-page-item {
+    display: block;
+  }
+
+  .hero-wrapper::after {
+    box-shadow: inset 1px 1px 100px black;
+  }
+
+  .sidebar--mobile {
+    display: block;
+  }
+
+  .sidebar--mobile a {
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .site-footer .container {
+    text-align: center !important;
+  }
+
+  .site-footer div:first-child > a {
+    display: block;
+  }
+
+  .site-footer .grid.col-3 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .copyright {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
