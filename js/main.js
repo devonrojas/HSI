@@ -1,50 +1,79 @@
 (function() {
-  console.log(window.innerHeight, window.innerWidth);
-  console.log(document.body.clientHeight, document.body.clientWidth);
+	document.querySelector(".main-menu-button").addEventListener("click", e => {
+		document.querySelector(".main-menu").classList.add("show-first");
+	});
 
-  document.querySelector(".main-menu-button").addEventListener("click", e => {
-    document.querySelector(".main-menu").classList.add("show-first");
-    // document.body.style.overflow = "hidden";
-  });
+	document.querySelector(".close-menu").addEventListener("click", e => {
+		document.querySelector(".main-menu").classList.remove("show-first");
+	});
 
-  document.querySelector(".close-menu").addEventListener("click", e => {
-    document.querySelector(".main-menu").classList.remove("show-first");
-    // document.body.style.overflow = "auto";
-  });
+	let btn = document.querySelector(".translate-button");
+	btn.addEventListener("click", e => {
+		if (btn.classList.contains("eng")) {
+			document.querySelectorAll(".english").forEach(el => {
+				el.classList.add("hidden");
+			});
+			document.querySelectorAll(".spanish").forEach(el => {
+				el.classList.remove("hidden");
+			});
+			btn.classList.remove("eng");
+			btn.classList.remove("button-secondary");
+			btn.classList.add("button-tertiary");
+		} else {
+			document.querySelectorAll(".english").forEach(el => {
+				el.classList.remove("hidden");
+			});
+			document.querySelectorAll(".spanish").forEach(el => {
+				el.classList.add("hidden");
+			});
+			btn.classList.add("eng");
+			btn.classList.add("button-secondary");
+			btn.classList.remove("button-tertiary");
+		}
+	});
 
-  document.querySelector(".down-to-main").addEventListener("click", e => {
-    scrollTo(document.querySelector(".main-content").offsetTop, 1200);
-  });
+	window.onscroll = e => {
+		let scroll = document.documentElement.scrollTop || document.body.scrollTop;
+		if (scroll > 0) {
+			document.querySelectorAll(".hero-right-text .button").forEach(el => {
+				el.classList.add("hide");
+			});
+		} else {
+			document.querySelectorAll(".hero-right-text .button").forEach(el => {
+				el.classList.remove("hide");
+			});
+		}
+	};
 })();
 
 // Helper Functions
 
 const scrollTo = function(to, duration) {
-  const element = document.scrollingElement || document.documentElement,
-    start = element.scrollTop,
-    change = to - start,
-    startDate = +new Date(),
-    // t = current time
-    // b = start value
-    // c = change in value
-    // d = duration
-    easeInOutQuad = function(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    },
-    animateScroll = function() {
-      const currentDate = +new Date();
-      const currentTime = currentDate - startDate;
-      element.scrollTop = parseInt(
-        easeInOutQuad(currentTime, start, change, duration)
-      );
-      if (currentTime < duration) {
-        requestAnimationFrame(animateScroll);
-      } else {
-        element.scrollTop = to;
-      }
-    };
-  animateScroll();
+	const element = document.scrollingElement || document.documentElement,
+		start = element.scrollTop,
+		change = to - start,
+		startDate = +new Date(),
+		// t = current time
+		// b = start value
+		// c = change in value
+		// d = duration
+		easeInOutQuad = function(t, b, c, d) {
+			t /= d / 2;
+			if (t < 1) return (c / 2) * t * t + b;
+			t--;
+			return (-c / 2) * (t * (t - 2) - 1) + b;
+		},
+		animateScroll = function() {
+			const currentDate = +new Date();
+			const currentTime = currentDate - startDate;
+			element.scrollTop = parseInt(
+				easeInOutQuad(currentTime, start, change, duration)
+			);
+			if (currentTime < duration) {
+				requestAnimationFrame(animateScroll);
+			} else {
+				element.scrollTop = to;
+			}
+		};
+	animateScroll();
 };
