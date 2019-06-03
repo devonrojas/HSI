@@ -1,10 +1,29 @@
 @media screen and (max-width: 600px) {
+  .content-w-sidebar--inner {
+    padding-top: 50px;
+  }
+
+  .hidden-sm {
+    display: none;
+  }
+
+  .grid.col-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .program-img[class] {
+    float: none;
+    display: block;
+    margin: 10px 0 !important;
+  }
+
   .first-level {
     width: 80vw;
     left: -80vw;
     overflow: scroll;
     padding: 60px 10px;
   }
+
   .main-menu .bottom-contain {
     bottom: 30px;
   }
@@ -37,15 +56,27 @@
     width: 100%;
     z-index: 99;
   }
+
+  .grid.team {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .container {
     width: 750px;
   }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .main-content {
+    padding-top: 0;
+  }
   .content-w-sidebar {
     width: 100%;
   }
@@ -114,5 +145,14 @@
 @media screen and (min-width: 992px) {
   .container {
     width: 970px;
+  }
+  .grid.team {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .grid.team {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
