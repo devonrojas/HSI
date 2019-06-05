@@ -165,7 +165,7 @@
                             <a href="./">Initiatives</a>
                             &nbsp;>&nbsp;
                             <span>
-                              <a href="#">Projects & Developments</a>
+                              <a href="#">History</a>
                             </span>
                           </span>
                         </span>
@@ -264,7 +264,7 @@
               <div class="content-w-sidebar--inner">
                 <article class="post">
                   <div class="entry">
-                    <div class="timeline" style="padding: 50px 0;">
+                    <div class="timeline">
                       <!-- Center Stripes -->
                       <div class="stripes">
                         <div class="stripes-left"></div>
@@ -272,7 +272,7 @@
                         <div class="stripes-right"></div>
                       </div>
                       <!-- Timeline Start -->
-                      <div class="timeline-year">
+                      <div class="timeline-year" id="2019">
                         <p>2019</p>
                       </div>
                       <!-- 2019 -->
@@ -308,7 +308,7 @@
                         proin fermentum leo vel orci porta.
                       </div>
                       <!-- 2018 -->
-                      <div class="timeline-year">
+                      <div class="timeline-year" id="2018">
                         <p>2018</p>
                       </div>
                       <div class="timeline-event left">
@@ -389,7 +389,7 @@
                         proin fermentum leo vel orci porta.
                       </div>
                       <!-- 2017 -->
-                      <div class="timeline-year">
+                      <div class="timeline-year" id="2017">
                         <p>2017</p>
                       </div>
                       <div class="timeline-event left">
@@ -471,7 +471,7 @@
                         proin fermentum leo vel orci porta.
                       </div>
                       <!-- 2016 -->
-                      <div class="timeline-year">
+                      <div class="timeline-year" id="2016">
                         <p>2016</p>
                       </div>
                       <div class="timeline-event left">
@@ -572,7 +572,7 @@
                         proin fermentum leo vel orci porta.
                       </div>
                       <!-- 2015 -->
-                      <div class="timeline-year">
+                      <div class="timeline-year" id="2015">
                         <p>2015</p>
                       </div>
                       <div class="timeline-event right">
@@ -653,7 +653,7 @@
                         proin fermentum leo vel orci porta.
                       </div>
                       <!-- 2014 -->
-                      <div class="timeline-year">
+                      <div class="timeline-year" id="2014">
                         <p>2014</p>
                       </div>
                       <div class="timeline-event right">
@@ -714,7 +714,7 @@
                         cras tincidunt lobortis feugiat vivamus at. Imperdiet
                         proin fermentum leo vel orci porta.
                       </div>
-                      <div class="timeline-year">
+                      <div class="timeline-year" id="2012">
                         <p>2012</p>
                       </div>
                       <div class="timeline-event left">
@@ -742,6 +742,9 @@
                         part an excellent network of colleges and universities
                         nationwide designated as Hispanic Serving Institutions.”
                       </div>
+                    </div>
+                    <div style="text-align: center;">
+                      <div class="button button-primary button--arrow-up">Back to Top</div>
                     </div>
                   </div>
                 </article>
@@ -898,5 +901,18 @@
       </div>
     </div>
     <script src="/js/main.js"></script>
+    <script>
+      (function() {
+        window.onscroll = e => {
+          let scroll =
+            document.documentElement.scrollTop || document.body.scrollTop;
+          let arr = Array.from(
+            document.querySelectorAll(".timeline-year")
+          ).reverse();
+          let hash = arr.find(el => el.offsetTop - scroll < -1000);
+          hash ? (window.location.hash = hash.id) : null;
+        };
+      })();
+    </script>
   </body>
 </html>

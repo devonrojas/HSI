@@ -60,6 +60,26 @@
   .grid.team {
     grid-template-columns: 1fr;
   }
+
+  .timeline .stripes {
+    left: 0;
+  }
+
+  .timeline {
+    padding: 50px 0;
+    padding-left: 25px;
+  }
+
+  .timeline .timeline-event.left,
+  .timeline .timeline-event.right {
+    padding: 0;
+  }
+
+  .timeline .timeline-event.left::after,
+  .timeline .timeline-event.right::after {
+    left: -39px;
+    transform: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -69,7 +89,7 @@
 
   .sidebar {
     position: sticky;
-    top: 0;
+    top: 50px;
   }
 }
 

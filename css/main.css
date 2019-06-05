@@ -93,6 +93,7 @@ li {
 }
 
 a {
+  color: white;
   text-decoration: none;
   transition: all 0.3s linear;
 }
@@ -397,19 +398,26 @@ a.active {
   border-color: #95c26e;
 }
 
-.button--arrow-down {
+.button--arrow-down,
+.button--arrow-up {
   padding-right: 60px;
   position: relative;
 }
 
 .button--arrow-down::before,
 .button--arrow-down::after {
+  top: 17px;
+}
+
+.button--arrow-down::before,
+.button--arrow-down::after,
+.button--arrow-up::before,
+.button--arrow-up::after {
   position: absolute;
   content: "";
   width: 1px;
   height: 14px;
   right: 30px;
-  top: 17px;
   transition: all 0.3s ease-in-out;
   background-color: black;
 }
@@ -430,6 +438,24 @@ a.active {
 
 .button--arrow-down:hover::after {
   transform: rotate(40deg);
+}
+
+.button--arrow-up::before {
+  transform: rotate(45deg);
+  transform-origin: left top;
+}
+
+.button--arrow-up::after {
+  transform: rotate(-45deg);
+  transform-origin: right top;
+}
+
+.button--arrow-up:hover::before {
+  transform: rotate(40deg);
+}
+
+.button--arrow-up:hover::after {
+  transform: rotate(-40deg);
 }
 
 /* HERO STYLES */
@@ -918,6 +944,7 @@ h1.hero-text {
   position: relative;
   margin-top: -50px;
   margin-bottom: 50px;
+  padding: 50px;
 }
 
 .home-infographics .stripes,
@@ -1217,7 +1244,6 @@ cite,
 
 .grid.team .team-member {
   width: 100%;
-  cursor: pointer;
   overflow: visible;
 }
 
@@ -1240,6 +1266,7 @@ cite,
   width: 100%;
   height: 100%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .grid.team img {
@@ -1275,6 +1302,23 @@ cite,
 .grid.team .team-member:nth-child(4n + 4) .team-member-info > span,
 .grid.team .team-member:nth-child(4n + 4) .team-member-info > cite {
   background-color: #a4d07e;
+}
+
+.grid.team .team-member:nth-child(4n + 1) .team-member-contact a:hover,
+.grid.team .team-member:nth-child(4n + 1) .team-member-contact a:hover {
+  color: #fcb424;
+}
+.grid.team .team-member:nth-child(4n + 2) .team-member-contact a:hover,
+.grid.team .team-member:nth-child(4n + 2) .team-member-contact a:hover {
+  color: #2f64bb;
+}
+.grid.team .team-member:nth-child(4n + 3) .team-member-contact a:hover,
+.grid.team .team-member:nth-child(4n + 3) .team-member-contact a:hover {
+  color: #ff9341;
+}
+.grid.team .team-member:nth-child(4n + 4) .team-member-contact a:hover,
+.grid.team .team-member:nth-child(4n + 4) .team-member-contact a:hover {
+  color: #a4d07e;
 }
 
 .grid.team .team-member-info > cite {
