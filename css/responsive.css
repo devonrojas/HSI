@@ -1,6 +1,15 @@
 @media screen and (max-width: 600px) {
+  h1[class] {
+    font-size: 5rem;
+  }
+
   .content-w-sidebar--inner {
     padding-top: 50px;
+  }
+
+  .hero-wrapper .hero-left-text {
+    left: 30px;
+    right: 30px;
   }
 
   .hidden-sm {
@@ -9,6 +18,46 @@
 
   .grid.col-2 {
     grid-template-columns: 1fr;
+  }
+
+  .home-infographics .grid.col-2 .item {
+    padding: 90px 0 45px;
+  }
+
+  .home-infographics .grid.col-2 .item.xl p.stat {
+    font-size: 6.5rem;
+  }
+
+  .home-infographics .stripes {
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+
+  .home-infographics .stripes-left,
+  .home-infographics .stripes-middle,
+  .home-infographics .stripes-right {
+    display: inline-block;
+    height: 2px;
+    width: 100%;
+  }
+
+  .infographic blockquote .context {
+    transform: none;
+  }
+
+  .infographic blockquote {
+    margin: 10px 0;
+  }
+
+  .drop-quote p::after {
+    top: 80%;
+  }
+
+  .portrait {
+    margin-left: 0;
+    margin-bottom: 100px;
   }
 
   .program-img[class] {

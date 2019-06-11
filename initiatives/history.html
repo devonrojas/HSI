@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="/css/responsive.css" />
     <title>San Diego Mesa College - Hispanic-Serving Institution</title>
   </head>
-  <body>
+  <body style="overflow-x:hidden">
     <div id="page-wrap">
       <div class="mobile-nav">
         <nav class="main-menu">
@@ -743,8 +743,8 @@
                         nationwide designated as Hispanic Serving Institutions.”
                       </div>
                     </div>
-                    <div style="text-align: center;">
-                      <div class="button button-primary button--arrow-up">Back to Top</div>
+                    <div class="text-center">
+                      <div class="button button-primary button--arrow-up" id="back_to_top">Back to Top</div>
                     </div>
                   </div>
                 </article>
@@ -903,7 +903,12 @@
     <script src="/js/main.js"></script>
     <script>
       (function() {
-        window.onscroll = e => {
+        document.getElementById("back_to_top")
+        .addEventListener('click', function(e) {
+          scrollTo(document.querySelector(".main-content").offsetTop, 2000);
+        })
+
+        window.addEventListener("scroll", function() {
           let scroll =
             document.documentElement.scrollTop || document.body.scrollTop;
           let arr = Array.from(
@@ -911,7 +916,7 @@
           ).reverse();
           let hash = arr.find(el => el.offsetTop - scroll < -1000);
           hash ? (window.location.hash = hash.id) : null;
-        };
+        });
       })();
     </script>
   </body>
